@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Python Tutorial - CodeQuest Tutorials
+{% endblock title %}
+
+{% block style %}
+  <link rel="stylesheet" href='{% static "css/home/home.css" %}'>
+  <link rel="stylesheet" href='{% static "python_base.css" %}'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+
+
+  {% endblock style %}
+
+
+
+{% block content %}
+
+<header>
+    <h1>Python Tutorial</h1>
+</header>
+<div class="container">
+    {% include "python_tutorial/topic.html" %}
+    <main class="content">
+        <section id="introduction">
+            {% block details %}
+            {{ infos.content|safe }}
+            {% endblock details %}
+        </section>
+    </main>
+</div>
+
+{% endblock content %}
+
+
+{% block script %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src='{% static "js/script.js" %}'></script>
+{% endblock script %}

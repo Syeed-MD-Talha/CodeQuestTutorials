@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href='{% static "css/home/about_page.css" %}'> 
+{% endblock style %}
+
+
+
+{% block title %}About CodeQuest Tutorials{% endblock title %}
+
+
+
+
+{% block content %}
+{% include "home_includes/header.html" %}
+
+<section id="about-hero">
+    <div class="container">
+        <h1>About CodeQuest Tutorials</h1>
+        <p>Empowering developers to master full-stack web development through comprehensive, engaging, and practical tutorials.</p>
+    </div>
+</section>
+
+<section class="about-content">
+    <div class="container">
+        <div class="about-text">
+            <h2>Our Mission</h2>
+            <p>At CodeQuest Tutorials, we believe that everyone has the potential to become a skilled developer. Our mission is to provide high-quality, accessible tutorials that guide learners through the exciting journey of full-stack web development.</p>
+            <p>We focus on practical, hands-on learning experiences that not only teach you the fundamentals but also prepare you for real-world challenges in the ever-evolving tech industry.</p>
+        </div>
+        <!-- <div class="about-image">
+            <img src="{% static 'images/logo-white.png' %}" alt="CodeQuest Team">
+        </div> -->
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <h2>Meet Our Expert Instructors</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="{% static 'images/profile_orange.png' %}" alt="Jane Doe">
+                <h3>Syeed MD Talha</h3>
+                <p>Python & Django Expert</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/150/150" alt="John Smith">
+                <h3>John Smith</h3>
+                <p>React Specialist</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/150/150" alt="Emily Wang">
+                <h3>Emily Wang</h3>
+                <p>Flutter Developer</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+
+

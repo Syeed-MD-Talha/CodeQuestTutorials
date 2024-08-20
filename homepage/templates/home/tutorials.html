@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href='{% static "css/home/tutorials.css" %}'> 
+{% endblock style %}
+
+
+
+{% block title %}About CodeQuest Tutorials{% endblock title %}
+
+
+
+
+{% block content %}
+{% include "home_includes/header.html" %}
+<section id="tutorial-hero">
+    <div class="container">
+        <h1>Embark on Your Coding Journey</h1>
+        <p>Discover our comprehensive tutorials and master full-stack development with hands-on projects and expert guidance.</p>
+        <a href="{% url 'python_tutorial' %}" class="btn">Get Started</a>
+    </div>
+</section>
+
+<section class="tutorial-grid container">
+    <div class="tutorial-card">
+        <img src="{% static 'images/python.webp' %}" alt="Python Basics">
+        <div class="tutorial-card-content">
+            <h3>Python Fundamentals</h3>
+            <p>Learn the basics of Python programming, from variables to functions and beyond.</p>
+            <a href="{% url 'python_tutorial' %}" class="btn">Start Learning</a>
+        </div>
+    </div>
+    <div class="tutorial-card">
+        <img src="{% static 'images/django-framework.jpg' %}" alt="Django Web Development">
+        <div class="tutorial-card-content">
+            <h3>Django Web Development</h3>
+            <p>Build powerful web applications with the Django framework.</p>
+            <a href="#" class="btn">Explore Django</a>
+        </div>
+    </div>
+    <div class="tutorial-card">
+        <img src="{% static 'images/ReactJs.png' %}" alt="React Essentials">
+        <div class="tutorial-card-content">
+            <h3>React Essentials</h3>
+            <p>Master the art of building interactive user interfaces with React.</p>
+            <a href="#" class="btn">Learn React</a>
+        </div>
+    </div>
+    <div class="tutorial-card">
+        <img src="{% static 'images/Flutter.png' %}" alt="Flutter Mobile Development">
+        <div class="tutorial-card-content">
+            <h3>Flutter Mobile Development</h3>
+            <p>Create cross-platform mobile apps with Flutter and Dart.</p>
+            <a href="#" class="btn">Start Mobile Dev</a>
+        </div>
+    </div>
+    <div class="tutorial-card">
+        <img src="{% static 'images/data-structures-and-algorithm.jpg' %}" alt="Database Design">
+        <div class="tutorial-card-content">
+            <h3>Data structures and alogorithms</h3>
+            <p>Learn to design and implement efficient database systems.</p>
+            <a href="#" class="btn">Explore Databases</a>
+        </div>
+    </div>
+    <div class="tutorial-card">
+        <img src="{% static 'images/rest_api.jpg' %}" alt="API Development">
+        <div class="tutorial-card-content">
+            <h3>API Development</h3>
+            <p>Master the art of creating robust and scalable APIs.</p>
+            <a href="#" class="btn">Build APIs</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>Why Choose CodeQuest Tutorials?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Hands-on Projects</h3>
+                <p>Apply your skills to real-world projects and build a impressive portfolio.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-users"></i>
+                <h3>Expert Instructors</h3>
+                <p>Learn from industry professionals with years of experience.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <h3>Self-Paced Learning</h3>
+                <p>Study at your own pace and on your own schedule.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-comments"></i>
+                <h3>Community Support</h3>
+                <p>Join a vibrant community of learners and get help when you need it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}
+
+
+
+

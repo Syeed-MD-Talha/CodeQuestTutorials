@@ -1,0 +1,17 @@
+
+
+<aside class="sidebar">
+    <h2>Topics</h2>
+     <ul>
+        {% for topic in topics %}
+        {% if topic.slug == None or topic.slug == '' %}
+        <li class="topic-heading">{{ topic.title|safe }}</li>
+        {% else %}
+        <li><a style="font-weight: 500;color:gray" href="{% url 'topic_detail' topic.slug %}">{{ topic.title|safe }}</a></li>
+        {% endif %}
+        
+        {% endfor %}
+     </ul>
+</aside>
+
+
