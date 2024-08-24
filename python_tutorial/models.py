@@ -1,27 +1,26 @@
+from typing import Iterable
 from django.db import models
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 
 
 # Create your models here.
-class PythonTutorial(models.Model):
-    title=models.CharField(max_length=500)
-    slug=models.SlugField(unique=False,null=True,blank=True)
-    content=RichTextField(blank=True, null=True,default='No content yet')
+class TopicSection(models.Model):
+    rank=models.IntegerField()
+    title=models.CharField(max_length=200)
+    
+    def save(self, *args, **kwargs):
+       self.title=self.title.upper()
+       super().save(*args, **kwargs) # Call the real save() method
     
     def __str__(self) -> str:
-        return self.title
+        return f"{self.title} | section: {self.rank}"
 
-class Topic(models.Model):
-    rank=models.IntegerField(blank=True,null=True)
-    title=RichTextField(blank=True, null=True,default='No content yet')
+class Article(models.Model):
+    title=models.CharField(max_length=200)
     slug=models.SlugField(unique=False,null=True,blank=True)
-    details=models.OneToOneField(PythonTutorial,on_delete=models.CASCADE)
-    
+    topic=models.ForeignKey(TopicSection,on_delete=models.CASCADE)
+    content=RichTextField(blank=True, null=True)
     def __str__(self) -> str:
-        return f"{self.details.title} ---- {self.rank}"
-    
-    def get_absolute_url(self):
-        if self.slug != 'heading':
-         return reverse('topic_detail', kwargs={'slug': self.slug})
-        return '#'
+        return f"{self.topic.title}  ____ {self.title}"
+        # return f"{self.title} ..... ___({self.topic.title} )"
