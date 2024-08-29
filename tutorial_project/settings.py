@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homepage',
     'python_tutorial',
+    'django_tutorial',
     'ckeditor',
     'ckeditor_uploader',  # Optional: Required for uploading images
     

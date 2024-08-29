@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('homepage.urls')),
     path('python/',include('python_tutorial.urls')),
+    path('django/',include('django_tutorial.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
