@@ -37,22 +37,16 @@ body {
         /* color:#c9f0f0; */
         color:#c9f0f0db;
     }
+    .sidebar{
+        scrollbar-color: rgb(0, 234, 255) #000000;
+        /* scrollbar-color: #23444F #23444F; */
+    }
+    a{
+        color: rgba(0, 255, 255, 0.72);
+    }
+
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -62,13 +56,33 @@ body {
 }
 
 .sidebar {
-    width: 250px;
+    width: 300px;
     background-color: var(--primary-color);
     color: white;
     padding: 2rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
+
+
+/* Ensure the sidebar has a fixed height and enables scrolling */
+.sidebar {
+    /* height: 100vh; */
+    height:calc(100vh - 5vh);
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #2f9bbb #000000; /* For Firefox */
+    scrollbar-color: #092E20 #092E20;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+
+
+#topic_section{margin-top: 30px;}
+
+
 
 .logo {
     font-size: 1.5rem;
@@ -245,113 +259,3 @@ pre {
     font-size: 1em;
 }
 
-
-@media (max-width: 1600px){
-.tutorial-section {padding: 2rem;}
- pre { max-width: 45rem;}
- h1{font-size: 35px;}
- h2{font-size: 25px;}
-}
-
-
-@media (min-width: 828px) and (max-width: 1150px) {
-    .tutorial-section {padding: 1rem;}
-    pre { max-width: 40rem;}
-}
-
-@media (min-width: 828px) and (max-width: 1050px) {
-    pre { max-width: 35rem;}
-    .tutorial-section{max-width: 40rem;}
-    p>img{max-width: 30rem;}
-}
-
-
-@media (min-width: 828px) and (max-width: 980px) {
-    pre { max-width: 30rem;}
-    .sidebar {max-width: 180px;}
-    .tutorial-section{max-width: 35rem;}
-}
-
-@media (min-width: 828px) and (max-width: 900px) {
-    .tutorial-section{max-width: 30rem;}
-    p>img{max-width: 25rem;}
-}
-  
-@media (max-width: 828px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        order: 2;
-    }
-    .content {
-        order: 1;
-    }
-    .tutorial-section {padding: 2rem;}
-    p > img {
-        max-width: 300px;
-        max-height: 300px;
-        object-fit: contain;
-        object-position: center;
-    }
-    h1{font-size: 30px;}
-    h2{font-size: 18px;}
-    p,code{font-size: 14px;}
-}
-
-.theme-switch {
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-.theme-switch label {
-    margin-right: 10px;
-    color: var(--bg-color);
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--bg-color);
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: var(--primary-color);
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: var(--secondary-color);
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}

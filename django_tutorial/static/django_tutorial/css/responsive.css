@@ -1,0 +1,62 @@
+@media (max-width: 1600px){
+    .tutorial-section {padding: 2rem;}
+     pre { max-width: 45rem;}
+     h1{font-size: 35px;}
+     h2{font-size: 25px;}
+    }
+    
+    @media (min-width: 850px) and (max-width: 1187px) {
+        .logo{width: 20px;}
+    }
+    @media (min-width: 850px) and (max-width: 1150px) {
+        .tutorial-section {padding: 1rem;}
+        pre { max-width: 40rem;}
+    }
+    
+    @media (min-width: 850px) and (max-width: 1050px) {
+        pre { max-width: 35rem;}
+        .tutorial-section{max-width: 40rem;}
+        p>img{max-width: 30rem;}
+    }
+    
+    
+    @media (min-width: 850px) and (max-width: 980px) {
+        pre { max-width: 30rem;}
+        /* .sidebar {max-width: 200px;} */
+        .tutorial-section{max-width: 35rem;}
+    }
+    
+    @media (min-width: 850px) and (max-width: 900px) {
+        .tutorial-section{max-width: 30rem;}
+        p>img{max-width: 25rem;}
+    }
+      
+
+
+    @media (max-width: 850px) {
+        .container {
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 100%;
+            order: 2;
+        }
+        .content {
+            order: 1;
+        }
+        .tutorial-section {padding: 2rem;}
+        p > img {
+            max-width: 300px;
+            max-height: 300px;
+            object-fit: contain;
+            object-position: center;
+        }
+        h1{font-size: 30px;}
+        h2{font-size: 18px;}
+        p,code{font-size: 14px;}
+
+        .theme-switch {
+            top: 5px;
+            left:270px;
+          }
+    }

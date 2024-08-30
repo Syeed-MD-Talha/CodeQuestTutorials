@@ -1,89 +1,64 @@
+{% extends "includes/base.html" %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Tutorial</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-twilight.min.css">
+
+{% block title %}
+Django Tutorial
+{% endblock title %}
+
+{% block style %}
+  <link rel="stylesheet" href="../static/django_tutorial/css/HomePage.css"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link id="prism-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-twilight.min.css">
+  {% endblock style %}
 
 
 
+{% block content %}
 
-
-    <link rel="stylesheet" href="../static/django_tutorial/css/HomePage.css">
-</head>
-<body>
-
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="../static/django_tutorial/images/django.png" alt="Django Logo">
-                Django Tutorial
-            </div>
-            <ul class="nav-links">
-                {% for key, value in topics.items %}
-                <li class="active">
-                    <a href=""><i class="{{key.1}}"></i><b>{{ key.0 }}</b></a>
-                    <ul class="subtopics" style="list-style-type:square;">
-                        {% for subtopic in value %}
-                        <li><a href="{{subtopic.slug}}">{{ subtopic.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% endfor %}
-            </ul>
-
-
-            <!-- <ul class="nav-links">
-                <li><a href="#introduction"><i class="fas fa-home"></i>Introduction</a></li>
-                <li><a href="#installation"><i class="fas fa-download"></i>Installation</a></li>
-                <li><a href="#project-setup"><i class="fas fa-project-diagram"></i>Project Setup</a></li>
-                <li><a href="#models"><i class="fas fa-database"></i>Models</a></li>
-                <li class="active">
-                    <a href="#views"><i class="fas fa-eye"></i>Views</a>
-                    <ul class="subtopics">
-                        <li><a href="#function-based-views">Function Based Views</a></li>
-                        <li><a href="#class-based-views">Class Based Views</a></li>
-                        <li><a href="#update-view">Update View</a></li>
-                        <li><a href="#list-view">List View</a></li>
-                        
-                    </ul>
-                </li>
-                <li><a href="#templates"><i class="fas fa-file-code"></i>Templates</a></li>
-            </ul> -->
-            
-            <div class="theme-switch">
-                <label for="theme-toggle">Dark Mode</label>
-                <label class="switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider"></span>
-                </label>
-            </div>
-        </aside>
-        <main class="content" >
-           <section class="tutorial-section">
-            {{infos.content|safe}}
-           </section>
-        </main>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-    <script src="../static/django_tutorial/js/HomePage.js"></script>
-    <script>
-        // Trigger Prism highlighting after content is loaded
-        document.addEventListener('DOMContentLoaded', (event) => {
-            Prism.highlightAll();
-        });
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+<div class="container">
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../static/django_tutorial/images/django.png" alt="Django Logo">
+            Django Tutorial
+        </div>
+        <ul class="nav-links">
+            {% for key, value in topics.items %}
+            <li class="active">
+                <a href=""><i class="{{key.1}}"></i><span class="topic">{{ key.0 }}</span></a>
+                <ul class="subtopics" style="list-style-type:square;">
+                    {% for subtopic in value %}
+                    <li><a href="{{subtopic.slug}}">{{ subtopic.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
 
         
-    </script>
-</body>
+        <div class="theme-switch">
+            <label for="theme-toggle">Dark Mode</label>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </aside>
+    <main class="content" >
+       <section class="tutorial-section">
+        {{infos.content|safe}}
+       </section>
+    </main>
+</div>
 
-</html>
+{% endblock content %}
+
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="../static/django_tutorial/js/HomePage.js"></script>
+{% endblock script %}

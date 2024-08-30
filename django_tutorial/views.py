@@ -1,41 +1,8 @@
-# from django.shortcuts import render,get_object_or_404
-# from django.views import View
-# from .models import *
-# from collections import defaultdict
-
-
-# # Create your views here.
-# ar={}
-# topics=TopicSection.objects.all() 
-# details=Article.objects.all()
-
-# for detail in details:
-#     Topic=detail.topic.title
-#     Icon=detail.topic.icon
-#     if (Topic,Icon) not in ar:ar[(Topic,Icon)]=[]
-#     ar[(Topic,Icon)].append(detail)
-
-
-
-# class HomePage(View):        
-#     def get(self,request):
-#         return render(request,'django_tutorial/homePage.html',{
-#             'topics':ar,
-#         })
-
-
-# class TopicDetails(View):
-#     def get(self,request,slug):
-#         current_topic=get_object_or_404(Article,slug=slug)
-#         return render(request,'django_tutorial/homePage.html',{
-#             'topics':ar,
-#             'infos':current_topic,
-#         })
-
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 from .models import TopicSection, Article
 from collections import defaultdict
+from django.http import JsonResponse
 
 def get_organized_articles():
     ar = {}
@@ -68,3 +35,4 @@ class TopicDetails(View):
             'topics': ar,
             'infos': current_topic,
         })
+
