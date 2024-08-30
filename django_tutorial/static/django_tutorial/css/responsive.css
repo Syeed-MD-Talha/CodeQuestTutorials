@@ -4,8 +4,22 @@
      h1{font-size: 35px;}
      h2{font-size: 25px;}
     }
+
+    @media (min-width: 1187px) and (max-width: 1230px) {
+        .logo{width: 20px;}
+        .tutorial-section{max-width: 40rem;}
+    }
     
     @media (min-width: 850px) and (max-width: 1187px) {
+        .tutorial-section{max-width: 40rem;}
+    }
+     @media (min-width: 1054px) and (max-width: 1090px) {
+        .logo{width: 20px;}
+    }
+    @media (min-width: 934px) and (max-width: 977px) {
+        .logo{width: 20px;}
+    }
+    @media (min-width: 854px) and (max-width: 895px) {
         .logo{width: 20px;}
     }
     @media (min-width: 850px) and (max-width: 1150px) {
@@ -15,7 +29,7 @@
     
     @media (min-width: 850px) and (max-width: 1050px) {
         pre { max-width: 35rem;}
-        .tutorial-section{max-width: 40rem;}
+        
         p>img{max-width: 30rem;}
     }
     

@@ -38,7 +38,6 @@ const themeToggle = document.getElementById('theme-toggle');
 
     // Check if the dark mode is enabled by default and set the theme
     switchPrismTheme(themeToggle.checked);
-
     // Listen for theme toggle
     themeToggle.addEventListener('change', function() {
         switchPrismTheme(this.checked);
