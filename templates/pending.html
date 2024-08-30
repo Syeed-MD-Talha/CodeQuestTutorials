@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        p {
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .highlight {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .construction-icon {
+            font-size: clamp(3rem, 10vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="construction-icon">🚧</div>
+        <h1>Oops! This section is under construction</h1>
+        <p>
+            We've completed the <span class="highlight">Python</span> and <span class="highlight">Django</span> tutorials. 
+            Feel free to explore those while we work on the rest!
+        </p>
+        <p>
+            Stay tuned for upcoming tutorials on <span class="highlight">React</span>, <span class="highlight">Laravel</span>, 
+            <span class="highlight">JavaScript</span>, and more.
+        </p>
+        <p>
+            Thank you for your patience. We're working hard to bring you more great content soon!
+        </p>
+    </div>
+</body>
+</html>

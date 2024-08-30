@@ -12,3 +12,4 @@ def tutorials_page(request):
 
 def contact_page(request):
     return render(request,'home/contact.html')
+

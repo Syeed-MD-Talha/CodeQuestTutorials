@@ -19,10 +19,16 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+from django.shortcuts import render
+def pending_page(request):
+    return render(request,'pending.html')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('homepage.urls')),
     path('python/',include('python_tutorial.urls')),
     path('django/',include('django_tutorial.urls')),
+    path('pending/',pending_page,name='pending_page'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
